@@ -1,0 +1,7 @@
+.button{
+    background-color: var(--c-button-color);
+    border-radius: 6px;
+    padding:4px 60px 4px 60px;
+    color:var(--c-primary);
+    font-weight: bold;
+}

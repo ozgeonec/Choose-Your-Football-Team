@@ -1,0 +1,16 @@
+@import 'variables.css';
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font: inherit;
+}
+html {
+    font-size: 14px;
+}
+
+body{
+    font-family: SofiaPro, sans-serif;
+    line-height: 17px;
+    background-color: var(--c-background-color);
+}

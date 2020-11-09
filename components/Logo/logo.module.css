@@ -1,0 +1,5 @@
+.logo{
+    color: var(--c-logo-color);
+    font-size: 20px;
+    font-weight: bold;
+}

@@ -1,0 +1,6 @@
+.layout{
+    background-color: var(--c-primary);
+    display: flex;
+
+    justify-content: center;
+}

@@ -1,0 +1,21 @@
+.division{
+    background-color: var(--c-primary);
+    width:800px;
+    height: 500px;
+    position:fixed;
+    border-radius: 8px;
+    top:70px;
+    padding: 8px;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 4px;
+    align-items: center;
+}
+.divSmall{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

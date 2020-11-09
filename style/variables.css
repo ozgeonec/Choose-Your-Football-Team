@@ -1,0 +1,11 @@
+:root{
+    --c-primary: #FFFFFF;
+    --c-background-color: #E9EAEB;
+    --c-navbar-color: #02063F;
+    --c-logo-color: #12C990;
+    --c-button-color-active: #3852FF;
+    --c-button-color: #586F8F;
+    --c-header-color: #023071;
+    --c-text-color: #9699BE;
+    --c-cancel-color: #E63846;
+}
