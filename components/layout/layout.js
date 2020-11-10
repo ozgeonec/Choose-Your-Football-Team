@@ -7,7 +7,6 @@ function Layout() {
     return <div className={styles.layout}>
         <Navigation/>
         <Division/>
-
     </div>
 }
 

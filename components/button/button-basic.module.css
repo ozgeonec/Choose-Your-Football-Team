@@ -1,0 +1,5 @@
+.buttonBasic{
+    background-color: transparent;
+    color: var(--c-button-color-active);
+    font-size: 12px;
+}

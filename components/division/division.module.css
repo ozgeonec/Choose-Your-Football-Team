@@ -1,11 +1,12 @@
 .division{
     background-color: var(--c-primary);
     width:800px;
-    height: 500px;
+    height: 510px;
     position:fixed;
     border-radius: 8px;
     top:70px;
     padding: 8px;
+    align-items: center;
 }
 .header{
     display: flex;
