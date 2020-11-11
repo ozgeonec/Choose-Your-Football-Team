@@ -6,11 +6,7 @@
     height: 460px;
     padding: 4px;
     overflow-y: scroll;
-
 }
 .divSmall::-webkit-scrollbar {
     display: none;
-}
-.divSmall {
-    -ms-overflow-style: none;  /* IE and Edge */
 }

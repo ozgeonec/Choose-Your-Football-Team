@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './button-basic.module.css'
-//import cn from 'classnames'
+import cn from 'classnames'
 
-function ButtonBasic({children}) {
-    return <button className={styles.buttonBasic}>
+function ButtonBasic({children, isClicked, ...props}) {
+    return <button className={cn(!isClicked && styles.buttonBasic, isClicked && styles.buttonClicked)}{...props}>
         {children}
     </button>
 }

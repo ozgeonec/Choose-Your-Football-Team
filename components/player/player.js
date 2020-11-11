@@ -1,19 +1,14 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import styles from './player.module.css'
 import Avatar from "../avatar/avatar";
 import Header from "../header/header";
 import Text from "../text/text";
 import ButtonBasic from "../button/button-basic";
-import * as p from "next";
-//import cn from 'classnames'
+import cn from 'classnames'
 
-//image_url
-//firstname
-//lastname
-//position.name
-//player,  position, button="PICK"
+function Player({image_url, firstname, lastname}) {
 
-function Player({image_url, firstname, lastname, button="PICK"}) {
+    const [isClickedKey,setClickedKey]= useState(false)
 
     return <div className={styles.player}>
         <div className={styles.profile}>
@@ -26,7 +21,7 @@ function Player({image_url, firstname, lastname, button="PICK"}) {
 
             </div>
         </div>
-        <ButtonBasic className={styles.buttonBasic}>{button}</ButtonBasic>
+        <ButtonBasic onClick={() => setClickedKey(!isClickedKey)} isClicked={isClickedKey} children={isClickedKey ? "UNPICK" : "PICK"}/>
     </div>
 }
 

@@ -13,7 +13,8 @@ function Division() {
     const { data, error } = useSWR('https://api.scoutium.com/api/clubs/4029/players?count=100', fetcher)
     if (error) return <div>failed to load</div>
     if (!data) return <div>loading...</div>
-    console.log(data)
+    //console.log(data)
+
     return <div className={styles.division}>
         <div className={styles.header}>
             <Team>Beşiktaş JK</Team>

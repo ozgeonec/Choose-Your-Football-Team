@@ -16,9 +16,9 @@
 
 }
 
-.buttonBasic{
-
-}
 .name{
     font-size: 8px;
+}
+.buttonClicked{
+    color: var(--c-cancel-color);
 }
