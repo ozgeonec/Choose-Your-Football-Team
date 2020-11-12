@@ -1,0 +1,41 @@
+.display{
+    position: fixed;
+    background: #02063F90;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+.modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    width:25%;
+    height: 35vh;
+    max-height: 50vh;
+    margin: calc(100vh - 65vh - 20px) auto 0;
+    background: var(--c-primary);
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #999;
+    overflow: auto;
+}
+
+.buttons{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+.basic{
+    color:var(--c-cancel-color);
+    padding-right: 5px;
+    background-color: transparent;
+}
+.display-none{
+    display: none;
+}

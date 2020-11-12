@@ -10,3 +10,7 @@
 .divSmall::-webkit-scrollbar {
     display: none;
 }
+.text{
+    color: var(--c-text-color);
+    text-align: center;
+}

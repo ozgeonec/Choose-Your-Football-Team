@@ -3,9 +3,10 @@ import styles from './division-small.module.css'
 import Header from "../header/header";
 //import cn from 'classnames'
 
-function DivisionSmall({children}) {
+function DivisionSmall({header ,children}) {
     return <div className={styles.divSmall}>
-        <Header>{children}</Header>
+        <Header>{header}</Header>
+        {children}
     </div>
 }
 

@@ -3,7 +3,7 @@ import styles from './button.module.css'
 //import cn from 'classnames'
 
 function Button({children}) {
-    return <button className={styles.button}>
+    return <button type="submit" className={styles.button}>
         {children}
     </button>
 }
