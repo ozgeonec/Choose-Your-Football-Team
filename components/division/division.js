@@ -26,13 +26,19 @@ function Division() {
         }
     }
     const removePlayer = (id) => {setPickedPlayers(pickedPlayers.filter((player) => player.id !== id))}
+
+    //adding Substitutes
     const addSubsFunc = () => {
         if(pickedPlayers.length === 11){
             setAddSubs(!addSubs)
         }
     }
-    useEffect(() => {setPickedPlayers(pickedPlayers); addSubsFunc();}  ,[pickedPlayers])
-
+    useEffect(() => {
+        setPickedPlayers(pickedPlayers);
+        addSubsFunc();
+        localStorage.setItem("PICKED",JSON.stringify(pickedPlayers.map((player)=> player.display_name)))
+   },[pickedPlayers])
+    //JSON.parse(localStorage.getItem("PICKED"))
     //Fetching data with Next's SWR package
     const { data, error } = useSWR('https://api.scoutium.com/api/clubs/4029/players?count=100', fetcher)
     if (error) return <div>failed to load</div>
@@ -59,6 +65,7 @@ function Division() {
                     <DivisionSmall header={"Substitutes"}>
                         {addSubs && <ButtonBasic onClick={() => setSubs(true)}>+Add Substitutes</ButtonBasic>}
                         {subs && <Modal />}
+                        {localStorage.getItem("IN")}
                     </DivisionSmall>
                 </div>
             </div>
