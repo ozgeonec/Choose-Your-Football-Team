@@ -35,6 +35,8 @@
     color:var(--c-cancel-color);
     padding-right: 5px;
     background-color: transparent;
+    cursor: pointer;
+    outline:none;
 }
 .display-none{
     display: none;

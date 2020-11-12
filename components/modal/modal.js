@@ -11,8 +11,6 @@ import ButtonBasic from "../button/button-basic";
 import Button from "../button/button";
 
 
-
-
 function Modal() {
 
     const store = useContext(StoreContext)
@@ -20,20 +18,29 @@ function Modal() {
     const [show, setShow] = useState(true)
     const [selectOut, setSelectOut] = useState({value:"",label:""})
     const [selectIn, setSelectIn] = useState({value:"",label:""})
+    const [minute, setMinute] = useState(0)
 
     const showHideClassName = show ? "styles.modal" : "styles.display-none";
-
+    // const preventRefresh = (e) => {
+    //     e.preventDefault();
+    //
+    // }
     const handleOutSelect=(e)=>{
         setSelectOut(e)
     }
     const handleInSelect=(e)=>{
         setSelectIn(e)
     }
+    const handleMin = (e) => {
+        setMinute(e)
+    }
     useEffect(()=>{
         setSelectIn(selectIn)
         setSelectOut(selectOut)
+        setMinute(minute)
         localStorage.setItem("IN",JSON.stringify(selectIn))
         localStorage.setItem("OUT",JSON.stringify(selectOut))
+        localStorage.setItem("MIN",JSON.stringify(minute))
     },[selectOut,selectIn])
 
     return <form className={styles.display}>
@@ -44,9 +51,9 @@ function Modal() {
         <Text>IN PLAYER</Text>
         <Dropdown options={options} onChange={handleInSelect} placeholder="Enter player name"/>
         <Text>SUBSTITUTION MINUTE</Text>
-        <input type="number" placeholder="Enter minute of substitution" min="0"/>
+        <input type="number" placeholder="Enter minute of substitution" onChange={handleMin} min="0"/>
         <div className={styles.buttons}>
-            <ButtonBasic className={styles.basic} onClick={()=>setShow(!show)}>Cancel</ButtonBasic>
+            <ButtonBasic className={styles.basic} onClick={()=> setShow(!show)}>Cancel</ButtonBasic>
             <Button>Add</Button>
         </div>
      </div>
