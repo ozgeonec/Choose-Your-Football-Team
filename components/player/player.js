@@ -25,13 +25,11 @@ function Player({image_url, firstname, lastname, name,id}) {
             </div>
         </div>
         <ButtonBasic
-            onClick={() => {setClickedKey(!isClickedKey);store.addPlayer(id);} }
+            onClick={() => {setClickedKey(!isClickedKey); isClickedKey ? store.removePlayer(id) : store.addPlayer(id)  } }
             isClicked={isClickedKey}
             children={isClickedKey ? "UNPICK" : "PICK"}
         />
-
     </div>
-
 }
 
 export default Player

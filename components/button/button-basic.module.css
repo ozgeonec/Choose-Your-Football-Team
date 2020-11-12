@@ -2,14 +2,14 @@
     cursor: pointer;
     background-color: transparent;
     color: var(--c-button-color-active);
-    font-size: 12px;
+    font-size: 11px;
     outline:none;
 }
 
 .buttonClicked{
     background-color: transparent;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 11px;
     color: var(--c-cancel-color);
     outline:none;
 }

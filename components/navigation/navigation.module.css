@@ -6,5 +6,5 @@
     align-items: center;
     width: 100%;
     background-color: var(--c-navbar-color);
-    min-height: 8vh;
+    height: 45px;
 }

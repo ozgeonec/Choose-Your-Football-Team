@@ -16,20 +16,26 @@ function Division() {
     const[pickedPlayers, setPickedPlayers] = useState([])
 
     const addPlayer = (id) => {
-        if(pickedPlayers.length<=10){
-            setPickedPlayers([...pickedPlayers,data?.players.find((player)=> player.id===id)])
+        if(pickedPlayers.length < 11){
+            setPickedPlayers([...pickedPlayers, data?.players.find((player)=> player.id===id)])
+
         }
     }
+
+    const removePlayer = (id) => {
+        setPickedPlayers(pickedPlayers.filter((player)=> player.id!==id))
+    }
+
     useEffect(() => {
         setPickedPlayers(pickedPlayers)
-        console.log(pickedPlayers)
     },[pickedPlayers])
 
+    //Fetching data with Next's SWR package
     const { data, error } = useSWR('https://api.scoutium.com/api/clubs/4029/players?count=100', fetcher)
     if (error) return <div>failed to load</div>
     if (!data) return <div>loading...</div>
     return (
-        <StoreContext.Provider value={{pickedPlayers, addPlayer}}>
+        <StoreContext.Provider value={{pickedPlayers, addPlayer, removePlayer}}>
             <div className={styles.division}>
                 <div className={styles.header}>
                     <Team>Beşiktaş JK</Team>
