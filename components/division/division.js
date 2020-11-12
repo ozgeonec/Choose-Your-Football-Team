@@ -49,7 +49,7 @@ function Division() {
                     </DivisionSmall>
                     <DivisionSmall>Line Up
                         {pickedPlayers.map((player) => {
-                            return <Player key={player.id} {...player}/>
+                            return <Player key={player.id} flat={false} {...player}/>
                         })}
                     </DivisionSmall>
                     <DivisionSmall>Substitutes</DivisionSmall>

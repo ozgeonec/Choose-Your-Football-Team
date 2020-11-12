@@ -8,7 +8,7 @@ import ButtonBasic from "../button/button-basic";
 import StoreContext from '../store/store'
 
 
-function Player({image_url, firstname, lastname, name,id}) {
+function Player({image_url, display_name,id,flat=true}) {
 
     const [isClickedKey,setClickedKey]= useState(false)
     //const [picked, setPicked] = useState(false)
@@ -19,16 +19,19 @@ function Player({image_url, firstname, lastname, name,id}) {
             <Avatar src={image_url}/>
             {/*<p>{store.pickedPlayers[0].firstname}</p>*/}
             <div className={styles.text}>
-                <Header className={styles.name}>{firstname}{" "}{lastname}</Header>
+                <Header className={styles.name}>{display_name}</Header>
                 {/*{position.map(pos => <Text key={pos.id}> {pos.name} </Text>)}*/}
-                <Text children={name}/>
+                <Text/>
             </div>
         </div>
-        <ButtonBasic
-            onClick={() => {setClickedKey(!isClickedKey); isClickedKey ? store.removePlayer(id) : store.addPlayer(id)  } }
+        {flat && <ButtonBasic
+            onClick={() => {
+                setClickedKey(!isClickedKey);
+                isClickedKey ? store.removePlayer(id) : store.addPlayer(id)
+            }}
             isClicked={isClickedKey}
             children={isClickedKey ? "UNPICK" : "PICK"}
-        />
+        />}
     </div>
 }
 
