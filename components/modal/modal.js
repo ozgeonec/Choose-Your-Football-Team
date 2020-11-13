@@ -24,15 +24,9 @@ function ModalPart({open}) {
 
     const showHideClassName = show ? "styles.modal" : "styles.display-none";
 
-    const handleOutSelect=(e)=>{
-        setSelectOut(e)
-    }
-    const handleInSelect=(e)=>{
-        setSelectIn(e)
-    }
-    const handleMin = (e) => {
-        setMinute(e)
-    }
+    const handleOutSelect=(e)=>{setSelectOut(e)}
+    const handleInSelect=(e)=>{setSelectIn(e)}
+    const handleMin = (e) => {setMinute(minute + e)}
     useEffect(()=>{
         setSelectIn(selectIn)
         setSelectOut(selectOut)
@@ -42,35 +36,33 @@ function ModalPart({open}) {
         localStorage.setItem("OUT",JSON.stringify(selectOut))
         localStorage.setItem("MIN",JSON.stringify(minute))
         localStorage.setItem("PICKED",JSON.stringify(store.pickedPlayers.map((player)=> player.display_name)))
-    },[selectOut,selectIn])
+    },[selectOut,selectIn,minute])
 
-    const cancelHandler = () => {
-        setShow(!show)
-    }
+    const cancelHandler = () => {setShow(!show)}
 
     const addInOut = (selectIn) => {
        selectIn = localStorage.getItem("IN")
         store.addSubPlayer(JSON.parse(selectIn).value);
-       console.log(JSON.parse(selectIn))
-        // console.log(selectIn)
     }
 
     return <Modal isOpen={show} onRequestClose={cancelHandler} >
       <div className={styles.display}>
       <div className={cn(styles.modal,showHideClassName)}>
           <Header>Add Substitution</Header>
+
           <Text>OUT PLAYER</Text>
           <Dropdown options={options} onChange={handleOutSelect} placeholder="Enter player name"/>
+
           <Text>IN PLAYER</Text>
           <Dropdown options={options} onChange={handleInSelect} placeholder="Enter player name"/>
+
           <Text>SUBSTITUTION MINUTE</Text>
           <input type="number" placeholder="Enter minute of substitution" onChange={handleMin} min="0" max="150"/>
 
           <div className={styles.buttons}>
-            <button className={styles.basic} id="mButton" onClick={cancelHandler}>Cancel</button>
+            <ButtonBasic className={styles.basic}  onClick={cancelHandler}>Cancel</ButtonBasic>
             <Button onClick={addInOut}>Add</Button>
           </div>
-
      </div>
     </div>
     </Modal>

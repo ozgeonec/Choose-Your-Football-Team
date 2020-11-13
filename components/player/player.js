@@ -11,16 +11,13 @@ import StoreContext from '../store/store'
 function Player({image_url, display_name,id,flat=true}) {
 
     const [isClickedKey,setClickedKey]= useState(false)
-    //const [picked, setPicked] = useState(false)
     const store = useContext(StoreContext)
 
     return <div className={styles.player}>
         <div className={styles.profile}>
             <Avatar src={image_url}/>
-            {/*<p>{store.pickedPlayers[0].firstname}</p>*/}
             <div className={styles.text}>
                 <Header className={styles.name}>{display_name}</Header>
-                {/*{position.map(pos => <Text key={pos.id}> {pos.name} </Text>)}*/}
                 <Text>Striker</Text>
             </div>
         </div>
