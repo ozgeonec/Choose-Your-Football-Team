@@ -21,7 +21,7 @@ function Player({image_url, display_name,id,flat=true}) {
             <div className={styles.text}>
                 <Header className={styles.name}>{display_name}</Header>
                 {/*{position.map(pos => <Text key={pos.id}> {pos.name} </Text>)}*/}
-                <Text/>
+                <Text>Striker</Text>
             </div>
         </div>
         {flat && <ButtonBasic
