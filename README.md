@@ -1,4 +1,4 @@
 # Choose Your Football Team
 React&amp;Next
 
-## PROJECT LINK: https://scoutium-project.ozgeonec.vercel.app/
+## PROJECT LINK: https://choose-team-project.vercel.app/
